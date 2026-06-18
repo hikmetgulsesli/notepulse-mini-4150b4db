@@ -86,17 +86,21 @@
     updateMetrics(getNotes(), filter);
   }
 
+  function renderAll() {
+    currentFilterIndex = 0;
+    updateMetrics(getNotes(), 'all');
+  }
+
   function init() {
     if (
       global.NotePulseStore &&
-      global.NotePulseStore.getState() === null &&
-      typeof global.NotePulseStore.init === 'function'
+      typeof global.NotePulseStore.init === 'function' &&
+      global.NotePulseStore.getState() === null
     ) {
-      global.NotePulseStore.init();
+      global.NotePulseStore.init().then(renderAll);
       return;
     }
-    var notes = getNotes();
-    updateMetrics(notes, 'all');
+    renderAll();
   }
 
   global.actFilterInsights = actFilterInsights;

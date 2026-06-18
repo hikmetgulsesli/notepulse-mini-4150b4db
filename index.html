@@ -3,10 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      http-equiv="refresh"
-      content="0; url=insights-notepulse-mini.html"
-    />
     <title>NotePulse Mini</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,15 +13,111 @@
     <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
   <body>
-    <main
-      data-setfarm-root="baseline"
-      data-testid="setfarm-app-root"
-      class="app-shell"
-    >
-      <p>
-        Redirecting to
-        <a href="insights-notepulse-mini.html">Insights</a>…
-      </p>
+    <main data-setfarm-root="baseline" data-testid="setfarm-app-root" class="app-shell">
+      <header class="app-header">
+        <div class="brand">
+          <span class="brand-mark">◆</span>
+          <h1>NotePulse Mini</h1>
+        </div>
+        <nav class="app-nav" aria-label="Primary">
+          <a
+            href="four-operations-notepulse-mini.html"
+            class="nav-link"
+            data-action-id="ACT_OPERATIONS"
+            >Operations</a
+          >
+          <a
+            href="four-editor-notepulse-mini.html"
+            class="nav-link"
+            data-action-id="ACT_EDITOR"
+            >Editor</a
+          >
+          <a
+            href="index.html"
+            class="nav-link active"
+            data-action-id="ACT_INSIGHTS"
+            >Insights</a
+          >
+        </nav>
+        <div class="header-actions">
+          <button
+            type="button"
+            class="btn btn-ghost"
+            data-action-id="ACT_NAVIGATE"
+            onclick="window.location.hash = '#sync'; return true;"
+          >
+            sync
+          </button>
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-action-id="ACT_EXPORT_SUMMARY"
+            onclick="window.actExportSummary && window.actExportSummary(event);"
+          >
+            Export JSON Summary
+          </button>
+          <button
+            type="button"
+            class="btn btn-ghost"
+            data-action-id="ACT_RETRY_LOAD"
+            onclick="window.actRetryLoad && window.actRetryLoad(event);"
+          >
+            Retry Load
+          </button>
+        </div>
+      </header>
+      <div class="app-main">
+        <section class="view insights-view">
+          <div class="metrics" id="insights-metrics">
+            <div class="metric-card">
+              <span class="metric-value" id="metric-total">1</span>
+              <span class="metric-label">Total</span>
+            </div>
+            <div class="metric-card status-active">
+              <span class="metric-value" id="metric-active">1</span>
+              <span class="metric-label">Active</span>
+            </div>
+            <div class="metric-card status-warn">
+              <span class="metric-value" id="metric-warn">0</span>
+              <span class="metric-label">Warn</span>
+            </div>
+            <div class="metric-card status-fail">
+              <span class="metric-value" id="metric-fail">0</span>
+              <span class="metric-label">Fail</span>
+            </div>
+          </div>
+          <div class="panel">
+            <h2>Recent Activity</h2>
+            <ul class="recent-list" id="insights-recent">
+              <li>Alpha Note — active</li>
+            </ul>
+          </div>
+          <div class="view-toolbar">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-action-id="ACT_FILTER_INSIGHTS"
+              onclick="window.actFilterInsights && window.actFilterInsights(event);"
+            >
+              Filter Insights
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-action-id="ACT_RESOLVE_INSIGHTS"
+              onclick="window.NotePulseStore && window.NotePulseStore.resolveAllNotes();"
+            >
+              Resolve
+            </button>
+          </div>
+          <div id="insights-feedback" class="empty-state" style="display: none;"></div>
+        </section>
+      </div>
     </main>
+    <script src="assets/js/notepulse-mini.storage.js" defer></script>
+    <script src="assets/js/notepulse-mini.state.js" defer></script>
+    <script src="assets/js/us-002/act_retry_load.js" defer></script>
+    <script src="assets/js/us-003/act_filter_insights.js" defer></script>
+    <script src="assets/js/us-003/act_export_summary.js" defer></script>
   </body>
 </html>
