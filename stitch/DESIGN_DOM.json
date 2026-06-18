@@ -1,0 +1,1681 @@
+{
+  "generatedAt": "2026-06-18T12:19:13.953Z",
+  "screenCount": 3,
+  "screens": {
+    "68cbcb61239d4268a333ef870c60dbf1": {
+      "screenId": "68cbcb61239d4268a333ef870c60dbf1",
+      "materialSymbolsRequired": true,
+      "sections": [
+        {
+          "tag": "nav",
+          "layout": "flex-row",
+          "classes": [
+            "bg-surface",
+            "text-primary",
+            "font-headline-sm",
+            "text-headline-sm",
+            "flex",
+            "justify-between",
+            "items-center",
+            "px-container-padding",
+            "h-12",
+            "w-full"
+          ],
+          "childCount": 3
+        },
+        {
+          "tag": "main",
+          "layout": "flex-row",
+          "classes": [
+            "flex-1",
+            "overflow-y-auto",
+            "p-container-padding",
+            "flex",
+            "justify-center",
+            "items-start",
+            "pt-8",
+            "pb-16"
+          ],
+          "childCount": 9
+        },
+        {
+          "tag": "footer",
+          "layout": "flex-row",
+          "classes": [
+            "bg-surface-container-lowest",
+            "text-primary",
+            "font-body-sm",
+            "text-body-sm",
+            "fixed",
+            "bottom-0",
+            "w-full",
+            "z-50",
+            "flex",
+            "justify-between"
+          ],
+          "childCount": 2
+        }
+      ],
+      "buttons": [
+        {
+          "kind": "button",
+          "label": "sync",
+          "classes": [
+            "p-1",
+            "rounded",
+            "text-secondary",
+            "hover:bg-surface-container-low",
+            "transition-colors",
+            "cursor-pointer",
+            "active:opacity-80",
+            "flex",
+            "items-center",
+            "justify-center"
+          ],
+          "icon": "sync",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#",
+          "expectedRoute": "#"
+        },
+        {
+          "kind": "button",
+          "label": "settings",
+          "classes": [
+            "p-1",
+            "rounded",
+            "text-secondary",
+            "hover:bg-surface-container-low",
+            "transition-colors",
+            "cursor-pointer",
+            "active:opacity-80",
+            "flex",
+            "items-center",
+            "justify-center"
+          ],
+          "icon": "settings",
+          "action": "navigate",
+          "expectedBehavior": "navigate:/settings",
+          "expectedRoute": "/settings",
+          "routeInferred": true
+        },
+        {
+          "kind": "button",
+          "label": "Active",
+          "classes": [
+            "flex-1",
+            "h-[28px]",
+            "bg-primary-container",
+            "text-on-primary-container",
+            "border",
+            "border-primary",
+            "font-body-sm",
+            "text-body-sm",
+            "font-bold",
+            "rounded",
+            "flex",
+            "items-center",
+            "justify-center",
+            "gap-1",
+            "transition-colors"
+          ],
+          "icon": "check_circle",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Warn",
+          "classes": [
+            "flex-1",
+            "h-[28px]",
+            "bg-surface",
+            "text-on-surface-variant",
+            "border",
+            "border-outline-variant",
+            "font-body-sm",
+            "text-body-sm",
+            "font-bold",
+            "rounded",
+            "flex",
+            "items-center",
+            "justify-center",
+            "gap-1",
+            "hover:bg-surface-container-low",
+            "transition-colors"
+          ],
+          "icon": "warning",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Fail",
+          "classes": [
+            "flex-1",
+            "h-[28px]",
+            "bg-surface",
+            "text-on-surface-variant",
+            "border",
+            "border-outline-variant",
+            "font-body-sm",
+            "text-body-sm",
+            "font-bold",
+            "rounded",
+            "flex",
+            "items-center",
+            "justify-center",
+            "gap-1",
+            "hover:bg-error-container",
+            "hover:text-on-error-container",
+            "hover:border-error-container",
+            "transition-colors"
+          ],
+          "icon": "cancel",
+          "action": "dismiss",
+          "expectedBehavior": "close dialog/panel or return to previous state"
+        },
+        {
+          "kind": "button",
+          "label": "Cancel Edit",
+          "classes": [
+            "h-[28px]",
+            "px-3",
+            "font-body-sm",
+            "text-body-sm",
+            "font-bold",
+            "text-secondary",
+            "border",
+            "border-outline-variant",
+            "rounded",
+            "hover:bg-surface-variant",
+            "hover:text-on-surface",
+            "transition-colors",
+            "focus:outline-none",
+            "focus:ring-1",
+            "focus:ring-secondary"
+          ],
+          "icon": null,
+          "action": "dismiss",
+          "expectedBehavior": "close dialog/panel or return to previous state"
+        },
+        {
+          "kind": "button",
+          "label": "Record",
+          "classes": [
+            "h-[32px]",
+            "px-4",
+            "font-body-sm",
+            "text-body-sm",
+            "font-bold",
+            "bg-primary",
+            "text-on-primary",
+            "rounded",
+            "flex",
+            "items-center",
+            "gap-1",
+            "hover:opacity-90",
+            "transition-opacity",
+            "shadow-sm",
+            "focus:outline-none",
+            "focus:ring-2",
+            "focus:ring-primary",
+            "focus:ring-offset-1",
+            "focus:ring-offset-surface"
+          ],
+          "icon": "save",
+          "action": "form-submit",
+          "expectedBehavior": "validate inputs and submit/apply changes"
+        },
+        {
+          "kind": "button",
+          "label": "sync",
+          "classes": [],
+          "icon": "sync",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "NotePulse Mini v1.0",
+          "classes": [],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        }
+      ],
+      "inputs": [
+        {
+          "kind": "input",
+          "type": "text",
+          "label": "Enter a precise identifier...",
+          "placeholder": "Enter a precise identifier...",
+          "name": "title-input",
+          "classes": [
+            "w-full",
+            "bg-surface",
+            "border",
+            "border-error",
+            "rounded",
+            "px-2",
+            "h-[32px]",
+            "font-body-md",
+            "text-body-md",
+            "text-on-surface",
+            "focus:outline-none",
+            "focus:ring-1",
+            "focus:ring-error",
+            "transition-colors"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "type": "textarea",
+          "label": "Document the procedural details here...",
+          "placeholder": "Document the procedural details here...",
+          "name": "content-input",
+          "classes": [
+            "w-full",
+            "bg-surface",
+            "border",
+            "border-outline-variant",
+            "rounded",
+            "p-2",
+            "min-h-[160px]",
+            "resize-y",
+            "font-body-md",
+            "text-body-md",
+            "text-on-surface",
+            "focus:border-primary",
+            "focus:outline-none",
+            "focus:ring-1",
+            "focus:ring-primary",
+            "transition-colors"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        }
+      ],
+      "navLinks": [
+        {
+          "kind": "link",
+          "label": "Operations",
+          "href": "#",
+          "classes": [
+            "text-secondary",
+            "hover:text-primary",
+            "pb-1",
+            "cursor-pointer",
+            "active:opacity-80",
+            "transition-colors"
+          ],
+          "icon": null,
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Editor",
+          "href": "#",
+          "classes": [
+            "text-primary",
+            "border-b-2",
+            "border-primary",
+            "pb-1",
+            "cursor-pointer",
+            "active:opacity-80",
+            "transition-colors"
+          ],
+          "icon": null,
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Insights",
+          "href": "#",
+          "classes": [
+            "text-secondary",
+            "hover:text-primary",
+            "pb-1",
+            "cursor-pointer",
+            "active:opacity-80",
+            "transition-colors"
+          ],
+          "icon": null,
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Export JSON Summary",
+          "href": "#",
+          "classes": [
+            "text-on-secondary-container",
+            "hover:underline",
+            "hover:text-primary",
+            "cursor-pointer",
+            "transition-colors"
+          ],
+          "icon": null,
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Retry Load",
+          "href": "#",
+          "classes": [
+            "text-on-secondary-container",
+            "hover:underline",
+            "hover:text-primary",
+            "cursor-pointer",
+            "transition-colors"
+          ],
+          "icon": null,
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "NotePulse Mini Operations",
+          "href": "#",
+          "classes": [],
+          "icon": null,
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        }
+      ],
+      "cards": [],
+      "icons": [
+        "sync",
+        "settings",
+        "fiber_manual_record",
+        "error",
+        "check_circle",
+        "warning",
+        "cancel",
+        "save"
+      ],
+      "images": [],
+      "cssVars": {},
+      "colorPalette": {
+        "on-secondary": "#ffffff",
+        "tertiary-fixed": "#ffdbcf",
+        "surface-container-low": "#f3f3fd",
+        "on-secondary-container": "#576377",
+        "on-secondary-fixed-variant": "#3b475b",
+        "tertiary-container": "#a33500",
+        "inverse-on-surface": "#f0f0fb",
+        "outline": "#737685",
+        "tertiary-fixed-dim": "#ffb59b",
+        "primary": "#003d9b",
+        "error": "#ba1a1a",
+        "on-secondary-fixed": "#101c2d",
+        "surface-container-lowest": "#ffffff",
+        "secondary-container": "#d4e0f8",
+        "inverse-primary": "#b2c5ff",
+        "surface-container-high": "#e7e7f2",
+        "on-primary-fixed": "#001848",
+        "error-container": "#ffdad6",
+        "on-surface-variant": "#434654",
+        "on-tertiary": "#ffffff",
+        "background": "#faf8ff",
+        "on-primary-fixed-variant": "#0040a2",
+        "surface": "#faf8ff",
+        "outline-variant": "#c3c6d6",
+        "primary-fixed-dim": "#b2c5ff",
+        "tertiary": "#7b2600",
+        "surface-dim": "#d9d9e4",
+        "on-primary": "#ffffff",
+        "primary-fixed": "#dae2ff",
+        "on-error": "#ffffff",
+        "surface-container-highest": "#e1e2ec",
+        "on-primary-container": "#c4d2ff",
+        "secondary-fixed-dim": "#bbc7de",
+        "surface-tint": "#0c56d0",
+        "secondary": "#535f73",
+        "surface-bright": "#faf8ff",
+        "on-tertiary-fixed-variant": "#812800",
+        "surface-variant": "#e1e2ec",
+        "inverse-surface": "#2e3038",
+        "on-tertiary-fixed": "#380d00",
+        "surface-container": "#ededf8",
+        "on-error-container": "#93000a",
+        "secondary-fixed": "#d7e3fb",
+        "on-surface": "#191b23",
+        "on-tertiary-container": "#ffc6b2",
+        "primary-container": "#0052cc",
+        "on-background": "#191b23"
+      },
+      "fonts": [
+        "Inter",
+        "JetBrains Mono",
+        "Material Symbols Outlined"
+      ],
+      "layoutHints": {
+        "flexDirection": "col",
+        "gap": "1"
+      },
+      "behaviorContract": [
+        {
+          "kind": "link",
+          "label": "Operations",
+          "icon": null,
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Editor",
+          "icon": null,
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Insights",
+          "icon": null,
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Export JSON Summary",
+          "icon": null,
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Retry Load",
+          "icon": null,
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "NotePulse Mini Operations",
+          "icon": null,
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "button",
+          "label": "sync",
+          "icon": "sync",
+          "action": "navigate",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "button",
+          "label": "settings",
+          "icon": "settings",
+          "action": "navigate",
+          "route": "/settings",
+          "expectedBehavior": "navigate:/settings"
+        },
+        {
+          "kind": "button",
+          "label": "Active",
+          "icon": "check_circle",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Warn",
+          "icon": "warning",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Fail",
+          "icon": "cancel",
+          "action": "dismiss",
+          "expectedBehavior": "close dialog/panel or return to previous state"
+        },
+        {
+          "kind": "button",
+          "label": "Cancel Edit",
+          "icon": null,
+          "action": "dismiss",
+          "expectedBehavior": "close dialog/panel or return to previous state"
+        },
+        {
+          "kind": "button",
+          "label": "Record",
+          "icon": "save",
+          "action": "form-submit",
+          "expectedBehavior": "validate inputs and submit/apply changes"
+        },
+        {
+          "kind": "button",
+          "label": "sync",
+          "icon": "sync",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "NotePulse Mini v1.0",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "input",
+          "label": "Enter a precise identifier...",
+          "type": "text",
+          "placeholder": "Enter a precise identifier...",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "label": "Document the procedural details here...",
+          "type": "textarea",
+          "placeholder": "Document the procedural details here...",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        }
+      ],
+      "tabBar": [
+        {
+          "kind": "link",
+          "label": "NotePulse Mini Operations",
+          "icon": null,
+          "route": "#",
+          "active": true
+        },
+        {
+          "kind": "link",
+          "label": "Editor",
+          "icon": null,
+          "route": "#",
+          "active": true
+        },
+        {
+          "kind": "link",
+          "label": "Insights",
+          "icon": null,
+          "route": "#",
+          "active": true
+        },
+        {
+          "kind": "button",
+          "label": "sync",
+          "icon": "sync",
+          "active": true
+        },
+        {
+          "kind": "button",
+          "label": "settings",
+          "icon": "settings",
+          "active": true
+        },
+        {
+          "kind": "button",
+          "label": "NotePulse Mini v1.0",
+          "icon": null,
+          "active": false
+        },
+        {
+          "kind": "link",
+          "label": "Export JSON Summary",
+          "icon": null,
+          "route": "#",
+          "active": true
+        },
+        {
+          "kind": "link",
+          "label": "Retry Load",
+          "icon": null,
+          "route": "#",
+          "active": true
+        }
+      ],
+      "title": "Four Editor - NotePulse Mini"
+    },
+    "783e7f169c764bccb4a58abb7afe7e3e": {
+      "screenId": "783e7f169c764bccb4a58abb7afe7e3e",
+      "materialSymbolsRequired": true,
+      "sections": [
+        {
+          "tag": "nav",
+          "layout": "flex-row",
+          "classes": [
+            "flex",
+            "justify-between",
+            "items-center",
+            "px-container-padding",
+            "h-12",
+            "w-full",
+            "max-w-full",
+            "bg-surface",
+            "border-b",
+            "border-outline-variant"
+          ],
+          "childCount": 3
+        },
+        {
+          "tag": "main",
+          "layout": "flex-col",
+          "classes": [
+            "flex-grow",
+            "flex",
+            "flex-col",
+            "items-center",
+            "w-full",
+            "pb-16"
+          ],
+          "childCount": 33
+        },
+        {
+          "tag": "footer",
+          "layout": "flex-row",
+          "classes": [
+            "fixed",
+            "bottom-0",
+            "w-full",
+            "z-50",
+            "flex",
+            "justify-between",
+            "items-center",
+            "px-container-padding",
+            "h-10",
+            "bg-surface-container-lowest"
+          ],
+          "childCount": 1
+        }
+      ],
+      "buttons": [
+        {
+          "kind": "button",
+          "label": "sync",
+          "classes": [
+            "text-primary",
+            "hover:bg-surface-container-low",
+            "transition-colors",
+            "cursor-pointer",
+            "active:opacity-80",
+            "p-1",
+            "rounded",
+            "inline-flex",
+            "items-center",
+            "justify-center"
+          ],
+          "icon": "sync",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#",
+          "expectedRoute": "#"
+        },
+        {
+          "kind": "button",
+          "label": "settings",
+          "classes": [
+            "text-primary",
+            "hover:bg-surface-container-low",
+            "transition-colors",
+            "cursor-pointer",
+            "active:opacity-80",
+            "p-1",
+            "rounded",
+            "inline-flex",
+            "items-center",
+            "justify-center"
+          ],
+          "icon": "settings",
+          "action": "navigate",
+          "expectedBehavior": "navigate:/settings",
+          "expectedRoute": "/settings",
+          "routeInferred": true
+        },
+        {
+          "kind": "button",
+          "label": "Filter Insights",
+          "classes": [
+            "h-[28px]",
+            "px-2",
+            "flex",
+            "items-center",
+            "justify-center",
+            "gap-1",
+            "bg-surface",
+            "border",
+            "border-outline-variant",
+            "rounded",
+            "hover:bg-surface-container-low",
+            "transition-colors",
+            "cursor-pointer",
+            "active:opacity-80"
+          ],
+          "icon": "filter_list",
+          "action": "search",
+          "expectedBehavior": "filter/search visible results from input/query"
+        },
+        {
+          "kind": "button",
+          "label": "Resolve",
+          "classes": [
+            "h-[28px]",
+            "px-3",
+            "bg-surface",
+            "border",
+            "border-outline-variant",
+            "rounded",
+            "hover:bg-surface-container-low",
+            "transition-colors",
+            "font-body-sm",
+            "text-body-sm",
+            "font-bold",
+            "text-on-surface",
+            "cursor-pointer"
+          ],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "NotePulse Mini",
+          "classes": [],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "sync",
+          "classes": [],
+          "icon": "sync",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        }
+      ],
+      "inputs": [],
+      "navLinks": [
+        {
+          "kind": "link",
+          "label": "Operations",
+          "href": "#",
+          "classes": [
+            "font-headline-sm",
+            "text-headline-sm",
+            "text-secondary",
+            "hover:text-primary",
+            "hover:bg-surface-container-low",
+            "transition-colors",
+            "cursor-pointer",
+            "active:opacity-80",
+            "pb-1",
+            "px-2",
+            "rounded-t"
+          ],
+          "icon": null,
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Editor",
+          "href": "#",
+          "classes": [
+            "font-headline-sm",
+            "text-headline-sm",
+            "text-secondary",
+            "hover:text-primary",
+            "hover:bg-surface-container-low",
+            "transition-colors",
+            "cursor-pointer",
+            "active:opacity-80",
+            "pb-1",
+            "px-2",
+            "rounded-t"
+          ],
+          "icon": null,
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Insights",
+          "href": "#",
+          "classes": [
+            "font-headline-sm",
+            "text-headline-sm",
+            "text-primary",
+            "border-b-2",
+            "border-primary",
+            "pb-1",
+            "px-2",
+            "cursor-pointer",
+            "active:opacity-80",
+            "hover:bg-surface-container-low",
+            "transition-colors"
+          ],
+          "icon": null,
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Export JSON Summary",
+          "href": "#",
+          "classes": [
+            "font-body-sm",
+            "text-body-sm",
+            "text-on-secondary-container",
+            "hover:underline",
+            "hover:text-primary",
+            "cursor-pointer",
+            "transition-colors"
+          ],
+          "icon": null,
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Retry Load",
+          "href": "#",
+          "classes": [
+            "font-body-sm",
+            "text-body-sm",
+            "text-on-secondary-container",
+            "hover:underline",
+            "hover:text-primary",
+            "cursor-pointer",
+            "transition-colors"
+          ],
+          "icon": null,
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        }
+      ],
+      "cards": [],
+      "icons": [
+        "sync",
+        "settings",
+        "error",
+        "filter_list",
+        "edit_note",
+        "report",
+        "cloud_done",
+        "priority_high"
+      ],
+      "images": [],
+      "cssVars": {},
+      "colorPalette": {
+        "on-secondary": "#ffffff",
+        "tertiary-fixed": "#ffdbcf",
+        "surface-container-low": "#f3f3fd",
+        "on-secondary-container": "#576377",
+        "on-secondary-fixed-variant": "#3b475b",
+        "tertiary-container": "#a33500",
+        "inverse-on-surface": "#f0f0fb",
+        "outline": "#737685",
+        "tertiary-fixed-dim": "#ffb59b",
+        "primary": "#003d9b",
+        "error": "#ba1a1a",
+        "on-secondary-fixed": "#101c2d",
+        "surface-container-lowest": "#ffffff",
+        "secondary-container": "#d4e0f8",
+        "inverse-primary": "#b2c5ff",
+        "surface-container-high": "#e7e7f2",
+        "on-primary-fixed": "#001848",
+        "error-container": "#ffdad6",
+        "on-surface-variant": "#434654",
+        "on-tertiary": "#ffffff",
+        "background": "#faf8ff",
+        "on-primary-fixed-variant": "#0040a2",
+        "surface": "#faf8ff",
+        "outline-variant": "#c3c6d6",
+        "primary-fixed-dim": "#b2c5ff",
+        "tertiary": "#7b2600",
+        "surface-dim": "#d9d9e4",
+        "on-primary": "#ffffff",
+        "primary-fixed": "#dae2ff",
+        "on-error": "#ffffff",
+        "surface-container-highest": "#e1e2ec",
+        "on-primary-container": "#c4d2ff",
+        "secondary-fixed-dim": "#bbc7de",
+        "surface-tint": "#0c56d0",
+        "secondary": "#535f73",
+        "surface-bright": "#faf8ff",
+        "on-tertiary-fixed-variant": "#812800",
+        "surface-variant": "#e1e2ec",
+        "inverse-surface": "#2e3038",
+        "on-tertiary-fixed": "#380d00",
+        "surface-container": "#ededf8",
+        "on-error-container": "#93000a",
+        "secondary-fixed": "#d7e3fb",
+        "on-surface": "#191b23",
+        "on-tertiary-container": "#ffc6b2",
+        "primary-container": "#0052cc",
+        "on-background": "#191b23"
+      },
+      "fonts": [
+        "Material Symbols Outlined",
+        "Inter",
+        "JetBrains Mono"
+      ],
+      "layoutHints": {
+        "gridCols": 1,
+        "flexDirection": "col",
+        "gap": "1"
+      },
+      "behaviorContract": [
+        {
+          "kind": "link",
+          "label": "Operations",
+          "icon": null,
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Editor",
+          "icon": null,
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Insights",
+          "icon": null,
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Export JSON Summary",
+          "icon": null,
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Retry Load",
+          "icon": null,
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "button",
+          "label": "sync",
+          "icon": "sync",
+          "action": "navigate",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "button",
+          "label": "settings",
+          "icon": "settings",
+          "action": "navigate",
+          "route": "/settings",
+          "expectedBehavior": "navigate:/settings"
+        },
+        {
+          "kind": "button",
+          "label": "Filter Insights",
+          "icon": "filter_list",
+          "action": "search",
+          "expectedBehavior": "filter/search visible results from input/query"
+        },
+        {
+          "kind": "button",
+          "label": "Resolve",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "NotePulse Mini",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "sync",
+          "icon": "sync",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        }
+      ],
+      "tabBar": [
+        {
+          "kind": "button",
+          "label": "NotePulse Mini",
+          "icon": null,
+          "active": true
+        },
+        {
+          "kind": "link",
+          "label": "Operations",
+          "icon": null,
+          "route": "#",
+          "active": true
+        },
+        {
+          "kind": "link",
+          "label": "Editor",
+          "icon": null,
+          "route": "#",
+          "active": true
+        },
+        {
+          "kind": "link",
+          "label": "Insights",
+          "icon": null,
+          "route": "#",
+          "active": true
+        },
+        {
+          "kind": "button",
+          "label": "sync",
+          "icon": "sync",
+          "active": true
+        },
+        {
+          "kind": "button",
+          "label": "settings",
+          "icon": "settings",
+          "active": true
+        },
+        {
+          "kind": "link",
+          "label": "Export JSON Summary",
+          "icon": null,
+          "route": "#",
+          "active": true
+        },
+        {
+          "kind": "link",
+          "label": "Retry Load",
+          "icon": null,
+          "route": "#",
+          "active": true
+        }
+      ],
+      "title": "Insights - NotePulse Mini"
+    },
+    "a1dc4a6df0694b0680e18729a9c494be": {
+      "screenId": "a1dc4a6df0694b0680e18729a9c494be",
+      "materialSymbolsRequired": true,
+      "sections": [
+        {
+          "tag": "header",
+          "layout": "flex-row",
+          "classes": [
+            "bg-surface",
+            "dark:bg-surface",
+            "border-b",
+            "border-outline-variant",
+            "dark:border-outline",
+            "flex",
+            "justify-between",
+            "items-center",
+            "px-container-padding",
+            "h-12"
+          ],
+          "childCount": 2
+        },
+        {
+          "tag": "main",
+          "layout": "flex-col",
+          "classes": [
+            "flex-1",
+            "flex",
+            "flex-col",
+            "p-container-padding",
+            "gap-grid-gutter",
+            "overflow-hidden",
+            "pb-[52px]"
+          ],
+          "childCount": 42
+        },
+        {
+          "tag": "footer",
+          "layout": "absolute",
+          "classes": [
+            "bg-surface-container-lowest",
+            "dark:bg-surface-container-lowest",
+            "border-t",
+            "border-outline-variant",
+            "dark:border-outline",
+            "font-body-sm",
+            "text-body-sm",
+            "fixed",
+            "bottom-0",
+            "w-full"
+          ],
+          "childCount": 2
+        }
+      ],
+      "buttons": [
+        {
+          "kind": "button",
+          "label": "sync",
+          "classes": [
+            "hover:bg-surface-container-low",
+            "dark:hover:bg-surface-container-highest",
+            "transition-colors",
+            "cursor-pointer",
+            "active:opacity-80",
+            "p-1",
+            "rounded",
+            "inline-flex"
+          ],
+          "icon": "sync",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#",
+          "expectedRoute": "#"
+        },
+        {
+          "kind": "button",
+          "label": "settings",
+          "classes": [
+            "hover:bg-surface-container-low",
+            "dark:hover:bg-surface-container-highest",
+            "transition-colors",
+            "cursor-pointer",
+            "active:opacity-80",
+            "p-1",
+            "rounded",
+            "inline-flex"
+          ],
+          "icon": "settings",
+          "action": "navigate",
+          "expectedBehavior": "navigate:/settings",
+          "expectedRoute": "/settings",
+          "routeInferred": true
+        },
+        {
+          "kind": "button",
+          "label": "Retry Load",
+          "classes": [
+            "h-[28px]",
+            "px-3",
+            "border",
+            "border-outline-variant",
+            "text-on-surface",
+            "bg-surface",
+            "hover:bg-surface-container-low",
+            "rounded",
+            "font-body-sm",
+            "text-body-sm",
+            "font-bold",
+            "flex",
+            "items-center",
+            "gap-unit",
+            "transition-colors"
+          ],
+          "icon": "refresh",
+          "action": "retry",
+          "expectedBehavior": "retry the failed action and show loading/error feedback"
+        },
+        {
+          "kind": "button",
+          "label": "Create Note",
+          "classes": [
+            "h-[32px]",
+            "px-4",
+            "bg-primary",
+            "text-on-primary",
+            "rounded",
+            "font-body-sm",
+            "text-body-sm",
+            "font-bold",
+            "flex",
+            "items-center",
+            "gap-unit",
+            "hover:opacity-90",
+            "transition-opacity"
+          ],
+          "icon": "add",
+          "action": "create",
+          "expectedBehavior": "open create flow or add a new item/state"
+        },
+        {
+          "kind": "button",
+          "label": "edit",
+          "classes": [
+            "h-[24px]",
+            "px-2",
+            "text-primary",
+            "hover:bg-primary-container",
+            "hover:text-on-primary-container",
+            "rounded",
+            "font-body-sm",
+            "text-body-sm",
+            "flex",
+            "items-center",
+            "gap-1",
+            "transition-colors",
+            "opacity-0",
+            "group-hover:opacity-100"
+          ],
+          "icon": "edit",
+          "action": "edit",
+          "expectedBehavior": "open edit flow or update selected item/state"
+        },
+        {
+          "kind": "button",
+          "label": "Export",
+          "classes": [
+            "h-[28px]",
+            "w-[28px]",
+            "flex",
+            "items-center",
+            "justify-center",
+            "text-secondary",
+            "hover:text-on-surface",
+            "hover:bg-surface-container-high",
+            "rounded",
+            "transition-colors"
+          ],
+          "icon": "download",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Delete",
+          "classes": [
+            "h-[28px]",
+            "w-[28px]",
+            "flex",
+            "items-center",
+            "justify-center",
+            "text-secondary",
+            "hover:text-on-surface",
+            "hover:bg-surface-container-high",
+            "rounded",
+            "transition-colors"
+          ],
+          "icon": "delete",
+          "action": "destructive",
+          "expectedBehavior": "perform destructive action with visible feedback or confirmation"
+        },
+        {
+          "kind": "button",
+          "label": "Edit Record",
+          "classes": [
+            "h-[28px]",
+            "px-3",
+            "bg-secondary-container",
+            "text-on-secondary-fixed",
+            "rounded",
+            "font-body-sm",
+            "text-body-sm",
+            "font-bold",
+            "ml-2",
+            "hover:opacity-90",
+            "transition-opacity"
+          ],
+          "icon": null,
+          "action": "edit",
+          "expectedBehavior": "open edit flow or update selected item/state"
+        },
+        {
+          "kind": "button",
+          "label": "NotePulse Mini v1.0",
+          "classes": [],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        }
+      ],
+      "inputs": [
+        {
+          "kind": "input",
+          "type": "text",
+          "label": "Search records...",
+          "placeholder": "Search records...",
+          "name": "",
+          "classes": [
+            "w-full",
+            "h-[32px]",
+            "pl-7",
+            "pr-2",
+            "bg-transparent",
+            "border-b",
+            "border-outline-variant",
+            "focus:border-primary",
+            "focus:outline-none",
+            "font-body-sm",
+            "text-body-sm",
+            "text-on-surface",
+            "placeholder:text-secondary",
+            "transition-colors"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        }
+      ],
+      "navLinks": [
+        {
+          "kind": "link",
+          "label": "Operations",
+          "href": "#",
+          "classes": [
+            "font-headline-sm",
+            "text-headline-sm",
+            "text-primary",
+            "dark:text-primary-fixed-dim",
+            "border-b-2",
+            "border-primary",
+            "dark:border-primary-fixed-dim",
+            "pb-1",
+            "cursor-pointer",
+            "active:opacity-80"
+          ],
+          "icon": null,
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Editor",
+          "href": "#",
+          "classes": [
+            "font-headline-sm",
+            "text-headline-sm",
+            "text-secondary",
+            "dark:text-secondary-fixed-dim",
+            "hover:text-primary",
+            "hover:bg-surface-container-low",
+            "dark:hover:bg-surface-container-highest",
+            "transition-colors",
+            "cursor-pointer",
+            "active:opacity-80",
+            "px-2",
+            "py-1",
+            "rounded"
+          ],
+          "icon": null,
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Insights",
+          "href": "#",
+          "classes": [
+            "font-headline-sm",
+            "text-headline-sm",
+            "text-secondary",
+            "dark:text-secondary-fixed-dim",
+            "hover:text-primary",
+            "hover:bg-surface-container-low",
+            "dark:hover:bg-surface-container-highest",
+            "transition-colors",
+            "cursor-pointer",
+            "active:opacity-80",
+            "px-2",
+            "py-1",
+            "rounded"
+          ],
+          "icon": null,
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Export JSON Summary",
+          "href": "#",
+          "classes": [
+            "hover:underline",
+            "hover:text-primary",
+            "cursor-pointer",
+            "text-primary",
+            "font-bold"
+          ],
+          "icon": null,
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Retry Load",
+          "href": "#",
+          "classes": [
+            "hover:underline",
+            "hover:text-primary",
+            "cursor-pointer"
+          ],
+          "icon": null,
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        }
+      ],
+      "cards": [],
+      "icons": [
+        "sync",
+        "settings",
+        "search",
+        "refresh",
+        "add",
+        "edit",
+        "download",
+        "delete"
+      ],
+      "images": [],
+      "cssVars": {},
+      "colorPalette": {
+        "on-secondary": "#ffffff",
+        "tertiary-fixed": "#ffdbcf",
+        "surface-container-low": "#f3f3fd",
+        "on-secondary-container": "#576377",
+        "on-secondary-fixed-variant": "#3b475b",
+        "tertiary-container": "#a33500",
+        "inverse-on-surface": "#f0f0fb",
+        "outline": "#737685",
+        "tertiary-fixed-dim": "#ffb59b",
+        "primary": "#003d9b",
+        "error": "#ba1a1a",
+        "on-secondary-fixed": "#101c2d",
+        "surface-container-lowest": "#ffffff",
+        "secondary-container": "#d4e0f8",
+        "inverse-primary": "#b2c5ff",
+        "surface-container-high": "#e7e7f2",
+        "on-primary-fixed": "#001848",
+        "error-container": "#ffdad6",
+        "on-surface-variant": "#434654",
+        "on-tertiary": "#ffffff",
+        "background": "#faf8ff",
+        "on-primary-fixed-variant": "#0040a2",
+        "surface": "#faf8ff",
+        "outline-variant": "#c3c6d6",
+        "primary-fixed-dim": "#b2c5ff",
+        "tertiary": "#7b2600",
+        "surface-dim": "#d9d9e4",
+        "on-primary": "#ffffff",
+        "primary-fixed": "#dae2ff",
+        "on-error": "#ffffff",
+        "surface-container-highest": "#e1e2ec",
+        "on-primary-container": "#c4d2ff",
+        "secondary-fixed-dim": "#bbc7de",
+        "surface-tint": "#0c56d0",
+        "secondary": "#535f73",
+        "surface-bright": "#faf8ff",
+        "on-tertiary-fixed-variant": "#812800",
+        "surface-variant": "#e1e2ec",
+        "inverse-surface": "#2e3038",
+        "on-tertiary-fixed": "#380d00",
+        "surface-container": "#ededf8",
+        "on-error-container": "#93000a",
+        "secondary-fixed": "#d7e3fb",
+        "on-surface": "#191b23",
+        "on-tertiary-container": "#ffc6b2",
+        "primary-container": "#0052cc",
+        "on-background": "#191b23"
+      },
+      "fonts": [
+        "Material Symbols Outlined",
+        "Inter",
+        "JetBrains Mono"
+      ],
+      "layoutHints": {
+        "gridCols": 2,
+        "flexDirection": "col",
+        "gap": "1"
+      },
+      "behaviorContract": [
+        {
+          "kind": "link",
+          "label": "Operations",
+          "icon": null,
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Editor",
+          "icon": null,
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Insights",
+          "icon": null,
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Export JSON Summary",
+          "icon": null,
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Retry Load",
+          "icon": null,
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "button",
+          "label": "sync",
+          "icon": "sync",
+          "action": "navigate",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "button",
+          "label": "settings",
+          "icon": "settings",
+          "action": "navigate",
+          "route": "/settings",
+          "expectedBehavior": "navigate:/settings"
+        },
+        {
+          "kind": "button",
+          "label": "Retry Load",
+          "icon": "refresh",
+          "action": "retry",
+          "expectedBehavior": "retry the failed action and show loading/error feedback"
+        },
+        {
+          "kind": "button",
+          "label": "Create Note",
+          "icon": "add",
+          "action": "create",
+          "expectedBehavior": "open create flow or add a new item/state"
+        },
+        {
+          "kind": "button",
+          "label": "edit",
+          "icon": "edit",
+          "action": "edit",
+          "expectedBehavior": "open edit flow or update selected item/state"
+        },
+        {
+          "kind": "button",
+          "label": "Export",
+          "icon": "download",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Delete",
+          "icon": "delete",
+          "action": "destructive",
+          "expectedBehavior": "perform destructive action with visible feedback or confirmation"
+        },
+        {
+          "kind": "button",
+          "label": "Edit Record",
+          "icon": null,
+          "action": "edit",
+          "expectedBehavior": "open edit flow or update selected item/state"
+        },
+        {
+          "kind": "button",
+          "label": "NotePulse Mini v1.0",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "input",
+          "label": "Search records...",
+          "type": "text",
+          "placeholder": "Search records...",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        }
+      ],
+      "tabBar": [
+        {
+          "kind": "link",
+          "label": "Operations",
+          "icon": null,
+          "route": "#",
+          "active": true
+        },
+        {
+          "kind": "link",
+          "label": "Editor",
+          "icon": null,
+          "route": "#",
+          "active": true
+        },
+        {
+          "kind": "link",
+          "label": "Insights",
+          "icon": null,
+          "route": "#",
+          "active": true
+        },
+        {
+          "kind": "button",
+          "label": "NotePulse Mini v1.0",
+          "icon": null,
+          "active": false
+        },
+        {
+          "kind": "link",
+          "label": "Export JSON Summary",
+          "icon": null,
+          "route": "#",
+          "active": true
+        },
+        {
+          "kind": "link",
+          "label": "Retry Load",
+          "icon": null,
+          "route": "#",
+          "active": true
+        }
+      ],
+      "title": "Four Operations - NotePulse Mini"
+    }
+  }
+}

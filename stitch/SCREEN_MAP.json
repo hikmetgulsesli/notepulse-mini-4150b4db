@@ -1,0 +1,29 @@
+[
+  {
+    "screenId": "68cbcb61239d4268a333ef870c60dbf1",
+    "name": "Four Editor - NotePulse Mini",
+    "type": "form",
+    "description": "Four Editor - NotePulse Mini screen",
+    "surfaceIds": [
+      "SURF_FOUR_EDITOR"
+    ]
+  },
+  {
+    "screenId": "783e7f169c764bccb4a58abb7afe7e3e",
+    "name": "Insights - NotePulse Mini",
+    "type": "app-screen",
+    "description": "Insights - NotePulse Mini screen",
+    "surfaceIds": [
+      "SURF_INSIGHTS"
+    ]
+  },
+  {
+    "screenId": "a1dc4a6df0694b0680e18729a9c494be",
+    "name": "Four Operations - NotePulse Mini",
+    "type": "app-screen",
+    "description": "Four Operations - NotePulse Mini screen",
+    "surfaceIds": [
+      "SURF_FOUR_OPERATIONS"
+    ]
+  }
+]

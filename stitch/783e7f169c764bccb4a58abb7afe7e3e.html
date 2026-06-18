@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Insights - NotePulse Mini</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=JetBrains+Mono:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS Setup -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed": "#ffdbcf",
+                    "surface-container-low": "#f3f3fd",
+                    "on-secondary-container": "#576377",
+                    "on-secondary-fixed-variant": "#3b475b",
+                    "tertiary-container": "#a33500",
+                    "inverse-on-surface": "#f0f0fb",
+                    "outline": "#737685",
+                    "tertiary-fixed-dim": "#ffb59b",
+                    "primary": "#003d9b",
+                    "error": "#ba1a1a",
+                    "on-secondary-fixed": "#101c2d",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-container": "#d4e0f8",
+                    "inverse-primary": "#b2c5ff",
+                    "surface-container-high": "#e7e7f2",
+                    "on-primary-fixed": "#001848",
+                    "error-container": "#ffdad6",
+                    "on-surface-variant": "#434654",
+                    "on-tertiary": "#ffffff",
+                    "background": "#faf8ff",
+                    "on-primary-fixed-variant": "#0040a2",
+                    "surface": "#faf8ff",
+                    "outline-variant": "#c3c6d6",
+                    "primary-fixed-dim": "#b2c5ff",
+                    "tertiary": "#7b2600",
+                    "surface-dim": "#d9d9e4",
+                    "on-primary": "#ffffff",
+                    "primary-fixed": "#dae2ff",
+                    "on-error": "#ffffff",
+                    "surface-container-highest": "#e1e2ec",
+                    "on-primary-container": "#c4d2ff",
+                    "secondary-fixed-dim": "#bbc7de",
+                    "surface-tint": "#0c56d0",
+                    "secondary": "#535f73",
+                    "surface-bright": "#faf8ff",
+                    "on-tertiary-fixed-variant": "#812800",
+                    "surface-variant": "#e1e2ec",
+                    "inverse-surface": "#2e3038",
+                    "on-tertiary-fixed": "#380d00",
+                    "surface-container": "#ededf8",
+                    "on-error-container": "#93000a",
+                    "secondary-fixed": "#d7e3fb",
+                    "on-surface": "#191b23",
+                    "on-tertiary-container": "#ffc6b2",
+                    "primary-container": "#0052cc",
+                    "on-background": "#191b23"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "element-gap": "4px",
+                    "container-padding": "12px",
+                    "stack-gap": "8px",
+                    "grid-gutter": "12px",
+                    "unit": "4px"
+            },
+            "fontFamily": {
+                    "headline-sm": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-caps": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "mono-label": ["JetBrains Mono"]
+            },
+            "fontSize": {
+                    "headline-sm": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+                    "body-md": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+                    "label-caps": ["10px", { "lineHeight": "12px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                    "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                    "mono-label": ["11px", { "lineHeight": "14px", "fontWeight": "400" }]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            font-size: 20px; /* Default sizing, overridden contextually */
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md text-body-md min-h-screen flex flex-col">
+<!-- TopNavBar Component -->
+<nav class="flex justify-between items-center px-container-padding h-12 w-full max-w-full bg-surface border-b border-outline-variant">
+<div class="font-headline-sm text-headline-sm font-bold text-primary">NotePulse Mini</div>
+<div class="hidden md:flex gap-stack-gap h-full items-end">
+<a class="font-headline-sm text-headline-sm text-secondary hover:text-primary hover:bg-surface-container-low transition-colors cursor-pointer active:opacity-80 pb-1 px-2 rounded-t" href="#">Operations</a>
+<a class="font-headline-sm text-headline-sm text-secondary hover:text-primary hover:bg-surface-container-low transition-colors cursor-pointer active:opacity-80 pb-1 px-2 rounded-t" href="#">Editor</a>
+<a class="font-headline-sm text-headline-sm text-primary border-b-2 border-primary pb-1 px-2 cursor-pointer active:opacity-80 hover:bg-surface-container-low transition-colors" href="#">Insights</a>
+</div>
+<div class="flex gap-element-gap items-center">
+<button class="text-primary hover:bg-surface-container-low transition-colors cursor-pointer active:opacity-80 p-1 rounded inline-flex items-center justify-center">
+<span class="material-symbols-outlined">sync</span>
+</button>
+<button class="text-primary hover:bg-surface-container-low transition-colors cursor-pointer active:opacity-80 p-1 rounded inline-flex items-center justify-center">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex flex-col items-center w-full pb-16">
+<div class="w-full max-w-3xl p-container-padding flex flex-col gap-grid-gutter">
+<!-- Context Header -->
+<header class="flex justify-between items-center w-full py-unit">
+<div class="flex items-center gap-stack-gap">
+<h1 class="font-headline-sm text-headline-sm text-on-surface">System Overview</h1>
+<span class="bg-error-container text-on-error-container bg-opacity-30 border border-error-container rounded-full px-2 py-[2px] font-label-caps text-label-caps flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">error</span>
+                        1 Requires Action
+                    </span>
+</div>
+<button class="h-[28px] px-2 flex items-center justify-center gap-1 bg-surface border border-outline-variant rounded hover:bg-surface-container-low transition-colors cursor-pointer active:opacity-80">
+<span class="material-symbols-outlined text-[16px]">filter_list</span>
+<span class="font-body-sm text-body-sm font-bold text-on-surface">Filter Insights</span>
+</button>
+</header>
+<!-- Fixed Density Grid (2x2 Desktop, 1x4 Mobile) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-grid-gutter w-full">
+<!-- Card 1: State Distribution -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded p-container-padding flex flex-col gap-stack-gap h-full">
+<h2 class="font-body-sm text-body-sm font-bold text-secondary uppercase tracking-widest">State Distribution</h2>
+<div class="flex flex-col gap-element-gap flex-grow justify-center">
+<!-- Active Bar -->
+<div class="flex items-center gap-element-gap h-[24px]">
+<div class="flex-grow h-2 bg-surface-variant rounded-sm overflow-hidden flex">
+<div class="w-3/4 bg-primary h-full"></div>
+</div>
+<span class="font-mono-label text-mono-label w-[24px] text-right text-on-surface">3</span>
+<span class="font-body-sm text-body-sm text-secondary w-[40px]">Active</span>
+</div>
+<!-- Warn Bar -->
+<div class="flex items-center gap-element-gap h-[24px]">
+<div class="flex-grow h-2 bg-surface-variant rounded-sm overflow-hidden flex">
+<div class="w-0 bg-tertiary-container h-full"></div>
+</div>
+<span class="font-mono-label text-mono-label w-[24px] text-right text-on-surface text-opacity-50">0</span>
+<span class="font-body-sm text-body-sm text-secondary w-[40px]">Warn</span>
+</div>
+<!-- Fail Bar -->
+<div class="flex items-center gap-element-gap h-[24px]">
+<div class="flex-grow h-2 bg-surface-variant rounded-sm overflow-hidden flex">
+<div class="w-1/4 bg-error h-full"></div>
+</div>
+<span class="font-mono-label text-mono-label w-[24px] text-right text-on-surface">1</span>
+<span class="font-body-sm text-body-sm text-secondary w-[40px]">Fail</span>
+</div>
+</div>
+</section>
+<!-- Card 2: Small Metrics -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded p-container-padding flex flex-col gap-stack-gap h-full">
+<h2 class="font-body-sm text-body-sm font-bold text-secondary uppercase tracking-widest">Core Metrics</h2>
+<div class="grid grid-cols-2 gap-element-gap flex-grow">
+<div class="bg-surface border border-outline-variant border-opacity-50 rounded p-2 flex flex-col justify-center">
+<span class="font-label-caps text-label-caps text-secondary mb-1">Avg Length</span>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-sm text-headline-sm text-on-surface">1,024</span>
+<span class="font-mono-label text-mono-label text-secondary">chr</span>
+</div>
+</div>
+<div class="bg-surface border border-outline-variant border-opacity-50 rounded p-2 flex flex-col justify-center">
+<span class="font-label-caps text-label-caps text-secondary mb-1">Last Sync</span>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-sm text-headline-sm text-on-surface">2</span>
+<span class="font-mono-label text-mono-label text-secondary">min ago</span>
+</div>
+</div>
+<div class="bg-surface border border-outline-variant border-opacity-50 rounded p-2 flex flex-col justify-center col-span-2">
+<span class="font-label-caps text-label-caps text-secondary mb-1">Total Payload</span>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-sm text-headline-sm text-on-surface">4.2</span>
+<span class="font-mono-label text-mono-label text-secondary">kb allocated</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Card 3: Recent Activity Log -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded p-container-padding flex flex-col gap-stack-gap h-full col-span-1 md:col-span-2">
+<h2 class="font-body-sm text-body-sm font-bold text-secondary uppercase tracking-widest">Recent Activity</h2>
+<ul class="flex flex-col">
+<li class="h-[32px] flex items-center justify-between border-b border-outline-variant border-opacity-50 last:border-0 hover:bg-surface-container-low transition-colors px-1 rounded-sm cursor-default">
+<div class="flex items-center gap-stack-gap">
+<span class="material-symbols-outlined text-[16px] text-primary">edit_note</span>
+<span class="font-body-md text-body-md text-on-surface">Note ID-004 updated payload.</span>
+</div>
+<span class="font-mono-label text-mono-label text-secondary">10:42 AM</span>
+</li>
+<li class="h-[32px] flex items-center justify-between border-b border-outline-variant border-opacity-50 last:border-0 hover:bg-surface-container-low transition-colors px-1 rounded-sm cursor-default">
+<div class="flex items-center gap-stack-gap">
+<span class="material-symbols-outlined text-[16px] text-error">report</span>
+<span class="font-body-md text-body-md text-on-surface">Note ID-002 sync failed.</span>
+</div>
+<span class="font-mono-label text-mono-label text-secondary">10:38 AM</span>
+</li>
+<li class="h-[32px] flex items-center justify-between border-b border-outline-variant border-opacity-50 last:border-0 hover:bg-surface-container-low transition-colors px-1 rounded-sm cursor-default">
+<div class="flex items-center gap-stack-gap">
+<span class="material-symbols-outlined text-[16px] text-primary">cloud_done</span>
+<span class="font-body-md text-body-md text-on-surface">Global state synchronized.</span>
+</div>
+<span class="font-mono-label text-mono-label text-secondary">10:30 AM</span>
+</li>
+</ul>
+</section>
+<!-- Card 4: Actionable Follow-up -->
+<section class="bg-error-container bg-opacity-20 border border-error border-opacity-30 rounded p-container-padding flex flex-col gap-stack-gap h-full col-span-1 md:col-span-2">
+<div class="flex items-center gap-element-gap">
+<span class="material-symbols-outlined text-error text-[18px]">priority_high</span>
+<h2 class="font-body-sm text-body-sm font-bold text-error uppercase tracking-widest">Required Follow-up</h2>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded p-2 flex justify-between items-center">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">Note ID-002</span>
+<span class="font-body-sm text-body-sm text-secondary">Data integrity check failed during last push.</span>
+</div>
+<button class="h-[28px] px-3 bg-surface border border-outline-variant rounded hover:bg-surface-container-low transition-colors font-body-sm text-body-sm font-bold text-on-surface cursor-pointer">
+                            Resolve
+                        </button>
+</div>
+</section>
+</div>
+</div>
+</main>
+<!-- Footer Component -->
+<footer class="fixed bottom-0 w-full z-50 flex justify-between items-center px-container-padding h-10 bg-surface-container-lowest border-t border-outline-variant">
+<span class="font-label-caps text-label-caps text-secondary">NotePulse Mini v1.0</span>
+<div class="flex gap-stack-gap">
+<a class="font-body-sm text-body-sm text-on-secondary-container hover:underline hover:text-primary cursor-pointer transition-colors" href="#">Export JSON Summary</a>
+<a class="font-body-sm text-body-sm text-on-secondary-container hover:underline hover:text-primary cursor-pointer transition-colors" href="#">Retry Load</a>
+</div>
+</footer>
+</body></html>

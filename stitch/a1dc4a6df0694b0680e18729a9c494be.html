@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Four Operations - NotePulse Mini</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=JetBrains+Mono:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#ffdbcf",
+                        "surface-container-low": "#f3f3fd",
+                        "on-secondary-container": "#576377",
+                        "on-secondary-fixed-variant": "#3b475b",
+                        "tertiary-container": "#a33500",
+                        "inverse-on-surface": "#f0f0fb",
+                        "outline": "#737685",
+                        "tertiary-fixed-dim": "#ffb59b",
+                        "primary": "#003d9b",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed": "#101c2d",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#d4e0f8",
+                        "inverse-primary": "#b2c5ff",
+                        "surface-container-high": "#e7e7f2",
+                        "on-primary-fixed": "#001848",
+                        "error-container": "#ffdad6",
+                        "on-surface-variant": "#434654",
+                        "on-tertiary": "#ffffff",
+                        "background": "#faf8ff",
+                        "on-primary-fixed-variant": "#0040a2",
+                        "surface": "#faf8ff",
+                        "outline-variant": "#c3c6d6",
+                        "primary-fixed-dim": "#b2c5ff",
+                        "tertiary": "#7b2600",
+                        "surface-dim": "#d9d9e4",
+                        "on-primary": "#ffffff",
+                        "primary-fixed": "#dae2ff",
+                        "on-error": "#ffffff",
+                        "surface-container-highest": "#e1e2ec",
+                        "on-primary-container": "#c4d2ff",
+                        "secondary-fixed-dim": "#bbc7de",
+                        "surface-tint": "#0c56d0",
+                        "secondary": "#535f73",
+                        "surface-bright": "#faf8ff",
+                        "on-tertiary-fixed-variant": "#812800",
+                        "surface-variant": "#e1e2ec",
+                        "inverse-surface": "#2e3038",
+                        "on-tertiary-fixed": "#380d00",
+                        "surface-container": "#ededf8",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed": "#d7e3fb",
+                        "on-surface": "#191b23",
+                        "on-tertiary-container": "#ffc6b2",
+                        "primary-container": "#0052cc",
+                        "on-background": "#191b23"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "element-gap": "4px",
+                        "container-padding": "12px",
+                        "stack-gap": "8px",
+                        "grid-gutter": "12px",
+                        "unit": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "mono-label": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "headline-sm": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+                        "body-md": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+                        "label-caps": ["10px", { "lineHeight": "12px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "mono-label": ["11px", { "lineHeight": "14px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Custom scrollbar for density */
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #c3c6d6; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #737685; }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- TopNavBar Shared Component -->
+<header class="bg-surface dark:bg-surface border-b border-outline-variant dark:border-outline flex justify-between items-center px-container-padding h-12 w-full max-w-full docked full-width top-0">
+<div class="flex items-center gap-grid-gutter">
+<span class="font-headline-sm text-headline-sm font-bold text-primary dark:text-primary-fixed-dim">NotePulse Mini</span>
+<nav class="hidden md:flex gap-stack-gap ml-container-padding">
+<a class="font-headline-sm text-headline-sm text-primary dark:text-primary-fixed-dim border-b-2 border-primary dark:border-primary-fixed-dim pb-1 cursor-pointer active:opacity-80" href="#">Operations</a>
+<a class="font-headline-sm text-headline-sm text-secondary dark:text-secondary-fixed-dim hover:text-primary hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors cursor-pointer active:opacity-80 px-2 py-1 rounded" href="#">Editor</a>
+<a class="font-headline-sm text-headline-sm text-secondary dark:text-secondary-fixed-dim hover:text-primary hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors cursor-pointer active:opacity-80 px-2 py-1 rounded" href="#">Insights</a>
+</nav>
+</div>
+<div class="flex items-center gap-stack-gap text-primary dark:text-primary-fixed-dim">
+<button aria-label="sync" class="hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors cursor-pointer active:opacity-80 p-1 rounded inline-flex">
+<span class="material-symbols-outlined" style="font-size: 20px;">sync</span>
+</button>
+<button aria-label="settings" class="hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors cursor-pointer active:opacity-80 p-1 rounded inline-flex">
+<span class="material-symbols-outlined" style="font-size: 20px;">settings</span>
+</button>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col p-container-padding gap-grid-gutter overflow-hidden pb-[52px]"> <!-- pb to account for fixed footer -->
+<!-- Header Actions & Metrics -->
+<section class="flex flex-col md:flex-row justify-between items-start md:items-end gap-stack-gap">
+<!-- Metrics Grid -->
+<div class="flex gap-element-gap">
+<div class="bg-surface border border-outline-variant rounded p-2 min-w-[80px] flex flex-col justify-center items-start">
+<span class="font-label-caps text-label-caps text-secondary uppercase">Active</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">2</span>
+</div>
+<div class="bg-surface border border-outline-variant rounded p-2 min-w-[80px] flex flex-col justify-center items-start">
+<span class="font-label-caps text-label-caps text-secondary uppercase">Warn</span>
+<span class="font-headline-sm text-headline-sm text-tertiary">1</span>
+</div>
+<div class="bg-surface border border-outline-variant rounded p-2 min-w-[80px] flex flex-col justify-center items-start">
+<span class="font-label-caps text-label-caps text-secondary uppercase">Fail</span>
+<span class="font-headline-sm text-headline-sm text-error">1</span>
+</div>
+</div>
+<!-- Global Actions -->
+<div class="flex items-center gap-element-gap w-full md:w-auto">
+<div class="relative flex-1 md:w-64">
+<span class="material-symbols-outlined absolute left-2 top-1/2 -translate-y-1/2 text-secondary" style="font-size: 16px;">search</span>
+<input class="w-full h-[32px] pl-7 pr-2 bg-transparent border-b border-outline-variant focus:border-primary focus:outline-none font-body-sm text-body-sm text-on-surface placeholder:text-secondary transition-colors" placeholder="Search records..." type="text"/>
+</div>
+<button class="h-[28px] px-3 border border-outline-variant text-on-surface bg-surface hover:bg-surface-container-low rounded font-body-sm text-body-sm font-bold flex items-center gap-unit transition-colors">
+<span class="material-symbols-outlined" style="font-size: 14px;">refresh</span>
+                    Retry Load
+                </button>
+<button class="h-[32px] px-4 bg-primary text-on-primary rounded font-body-sm text-body-sm font-bold flex items-center gap-unit hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined" style="font-size: 16px;">add</span>
+                    Create Note
+                </button>
+</div>
+</section>
+<!-- Split View: List + Preview -->
+<section class="flex-1 flex flex-col md:flex-row gap-grid-gutter min-h-0">
+<!-- Left: Dense List of 4 Notes -->
+<div class="w-full md:w-[320px] flex flex-col gap-element-gap overflow-y-auto pr-1">
+<!-- Note Item 1 (Selected) -->
+<div class="bg-surface border border-primary rounded p-container-padding flex flex-col gap-unit cursor-pointer relative overflow-hidden group">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary"></div>
+<div class="flex justify-between items-start pl-1">
+<span class="font-body-md text-body-md font-bold text-on-surface truncate pr-2">System Config sync</span>
+<div class="w-2 h-2 rounded-full bg-primary mt-1 shrink-0" title="Active"></div>
+</div>
+<p class="font-body-sm text-body-sm text-secondary line-clamp-2 pl-1 leading-tight">
+                        Payload structure updated to v2. Awaiting final validation from the core ingestion pipeline.
+                    </p>
+<div class="flex justify-between items-center mt-1 pl-1">
+<span class="font-mono-label text-mono-label text-outline">ID-4091</span>
+<button class="h-[24px] px-2 text-primary hover:bg-primary-container hover:text-on-primary-container rounded font-body-sm text-body-sm flex items-center gap-1 transition-colors opacity-0 group-hover:opacity-100">
+<span class="material-symbols-outlined" style="font-size: 14px;">edit</span>
+                            Edit
+                        </button>
+</div>
+</div>
+<!-- Note Item 2 -->
+<div class="bg-surface border border-outline-variant hover:border-outline rounded p-container-padding flex flex-col gap-unit cursor-pointer transition-colors group">
+<div class="flex justify-between items-start">
+<span class="font-body-md text-body-md font-bold text-on-surface truncate pr-2">Legacy API Deprecation</span>
+<div class="w-2 h-2 rounded-full bg-tertiary mt-1 shrink-0" title="Warn"></div>
+</div>
+<p class="font-body-sm text-body-sm text-secondary line-clamp-2 leading-tight">
+                        Traffic observed on endpoints marked for sunset. Immediate review required by platform team.
+                    </p>
+<div class="flex justify-between items-center mt-1">
+<span class="font-mono-label text-mono-label text-outline">ID-3882</span>
+<button class="h-[24px] px-2 text-primary hover:bg-surface-container-high rounded font-body-sm text-body-sm flex items-center gap-1 transition-colors opacity-0 group-hover:opacity-100">
+<span class="material-symbols-outlined" style="font-size: 14px;">edit</span>
+                            Edit
+                        </button>
+</div>
+</div>
+<!-- Note Item 3 -->
+<div class="bg-surface border border-outline-variant hover:border-outline rounded p-container-padding flex flex-col gap-unit cursor-pointer transition-colors group">
+<div class="flex justify-between items-start">
+<span class="font-body-md text-body-md font-bold text-on-surface truncate pr-2">Auth Token Rotation</span>
+<div class="w-2 h-2 rounded-full bg-primary mt-1 shrink-0" title="Active"></div>
+</div>
+<p class="font-body-sm text-body-sm text-secondary line-clamp-2 leading-tight">
+                        Scheduled rotation completed successfully. No service disruption detected during the swap.
+                    </p>
+<div class="flex justify-between items-center mt-1">
+<span class="font-mono-label text-mono-label text-outline">ID-4105</span>
+<button class="h-[24px] px-2 text-primary hover:bg-surface-container-high rounded font-body-sm text-body-sm flex items-center gap-1 transition-colors opacity-0 group-hover:opacity-100">
+<span class="material-symbols-outlined" style="font-size: 14px;">edit</span>
+                            Edit
+                        </button>
+</div>
+</div>
+<!-- Note Item 4 -->
+<div class="bg-surface border border-outline-variant hover:border-outline rounded p-container-padding flex flex-col gap-unit cursor-pointer transition-colors group">
+<div class="flex justify-between items-start">
+<span class="font-body-md text-body-md font-bold text-on-surface truncate pr-2">Database Indexing Failure</span>
+<div class="w-2 h-2 rounded-full bg-error mt-1 shrink-0" title="Fail"></div>
+</div>
+<p class="font-body-sm text-body-sm text-secondary line-clamp-2 leading-tight">
+                        Write timeout on primary cluster. Fallback engaged, but latency metrics are spiking.
+                    </p>
+<div class="flex justify-between items-center mt-1">
+<span class="font-mono-label text-mono-label text-outline">ID-4112</span>
+<button class="h-[24px] px-2 text-primary hover:bg-surface-container-high rounded font-body-sm text-body-sm flex items-center gap-1 transition-colors opacity-0 group-hover:opacity-100">
+<span class="material-symbols-outlined" style="font-size: 14px;">edit</span>
+                            Edit
+                        </button>
+</div>
+</div>
+</div>
+<!-- Right: Preview Panel -->
+<div class="flex-1 bg-surface border border-outline-variant rounded flex flex-col min-w-0">
+<!-- Preview Header -->
+<div class="px-container-padding py-3 border-b border-outline-variant flex justify-between items-start bg-surface-container-lowest">
+<div class="flex flex-col gap-1 max-w-[70%]">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">System Config sync</span>
+<span class="bg-primary-container text-primary font-label-caps text-label-caps px-2 py-0.5 rounded uppercase">Active</span>
+</div>
+<span class="font-mono-label text-mono-label text-secondary">Record ID: 4091 • Created: 2h ago</span>
+</div>
+<div class="flex gap-element-gap">
+<button class="h-[28px] w-[28px] flex items-center justify-center text-secondary hover:text-on-surface hover:bg-surface-container-high rounded transition-colors" title="Export">
+<span class="material-symbols-outlined" style="font-size: 16px;">download</span>
+</button>
+<button class="h-[28px] w-[28px] flex items-center justify-center text-secondary hover:text-on-surface hover:bg-surface-container-high rounded transition-colors" title="Delete">
+<span class="material-symbols-outlined" style="font-size: 16px;">delete</span>
+</button>
+<button class="h-[28px] px-3 bg-secondary-container text-on-secondary-fixed rounded font-body-sm text-body-sm font-bold ml-2 hover:opacity-90 transition-opacity">
+                            Edit Record
+                        </button>
+</div>
+</div>
+<!-- Preview Content (Bento/Structured) -->
+<div class="flex-1 p-container-padding overflow-y-auto flex flex-col gap-grid-gutter bg-surface-bright">
+<!-- Main Text Area -->
+<div class="flex flex-col gap-unit">
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-wider">Payload Description</span>
+<div class="font-body-md text-body-md text-on-surface leading-relaxed p-3 bg-surface border border-outline-variant rounded min-h-[100px]">
+                            Payload structure updated to v2. Awaiting final validation from the core ingestion pipeline. The mapping schema has been adjusted to handle the new localized timestamp formats without triggering fallback parsers.
+                        </div>
+</div>
+<!-- Metadata Grid -->
+<div class="grid grid-cols-2 gap-stack-gap">
+<div class="flex flex-col gap-unit p-3 border border-outline-variant rounded bg-surface">
+<span class="font-label-caps text-label-caps text-outline uppercase">Assigned To</span>
+<div class="flex items-center gap-2">
+<div class="w-5 h-5 rounded-full bg-surface-variant flex items-center justify-center text-[10px] font-bold text-on-surface-variant">JS</div>
+<span class="font-body-sm text-body-sm text-on-surface">J. Smith</span>
+</div>
+</div>
+<div class="flex flex-col gap-unit p-3 border border-outline-variant rounded bg-surface">
+<span class="font-label-caps text-label-caps text-outline uppercase">Target Environment</span>
+<span class="font-mono-label text-mono-label text-on-surface">prd-us-east-1</span>
+</div>
+<div class="flex flex-col gap-unit p-3 border border-outline-variant rounded bg-surface">
+<span class="font-label-caps text-label-caps text-outline uppercase">Validation Policy</span>
+<span class="font-body-sm text-body-sm text-on-surface">Strict (No Allowlist)</span>
+</div>
+<div class="flex flex-col gap-unit p-3 border border-outline-variant rounded bg-surface">
+<span class="font-label-caps text-label-caps text-outline uppercase">Last Sync Ping</span>
+<span class="font-mono-label text-mono-label text-on-surface">14:02:45 UTC</span>
+</div>
+</div>
+<!-- Raw Data Snippet -->
+<div class="flex flex-col gap-unit mt-2">
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-wider">Diff Context</span>
+<pre class="font-mono-label text-mono-label text-secondary bg-surface-container-lowest border border-outline-variant rounded p-3 overflow-x-auto">{
+  "schema_version": "v2.1",
+  "nodes": 4,
+  "status_matrix": [1, 0, 0, 0]
+}</pre>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Shared Component -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant dark:border-outline font-body-sm text-body-sm fixed bottom-0 w-full z-50 flex justify-between items-center px-container-padding h-10 docked full-width bottom-0">
+<div class="font-label-caps text-label-caps text-secondary">
+            NotePulse Mini v1.0
+        </div>
+<div class="flex gap-grid-gutter text-on-secondary-container dark:text-on-secondary-container">
+<a class="hover:underline hover:text-primary cursor-pointer text-primary font-bold" href="#">Export JSON Summary</a>
+<a class="hover:underline hover:text-primary cursor-pointer" href="#">Retry Load</a>
+</div>
+</footer>
+</body></html>
