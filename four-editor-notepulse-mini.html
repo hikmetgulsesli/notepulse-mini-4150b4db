@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Four Editor - NotePulse Mini</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <main data-testid="setfarm-app-root" class="app-shell">
+      <header class="app-header">
+        <div class="brand">
+          <span class="brand-mark">◆</span>
+          <h1>NotePulse Mini</h1>
+        </div>
+        <nav class="app-nav" aria-label="Primary">
+          <a href="four-operations-notepulse-mini.html" class="nav-link">Operations</a>
+          <a href="four-editor-notepulse-mini.html" class="nav-link active">Editor</a>
+          <a href="index.html" class="nav-link" onclick="window.NotePulseStore && window.NotePulseStore.setView('insights'); return true;">Insights</a>
+        </nav>
+        <div class="header-actions">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-action-id="ACT_EXPORT_SUMMARY"
+            onclick="window.NotePulseStore && window.NotePulseStore.exportSummary();"
+          >
+            Export JSON Summary
+          </button>
+          <button
+            type="button"
+            class="btn btn-ghost"
+            data-action-id="ACT_RETRY_LOAD"
+            onclick="window.NotePulseStore && window.NotePulseStore.retryLoad();"
+          >
+            Retry Load
+          </button>
+        </div>
+      </header>
+      <div class="app-main">
+        <section class="view editor-view">
+          <form
+            class="editor-form"
+            onsubmit="window.actSaveRecord && window.actSaveRecord(event);"
+          >
+            <label class="field-label">
+              Identifier
+              <input
+                type="text"
+                class="input"
+                placeholder="Enter a precise identifier..."
+                required
+              />
+            </label>
+            <label class="field-label">
+              Details
+              <textarea
+                class="input textarea"
+                rows="6"
+                placeholder="Document the procedural details here..."
+              ></textarea>
+            </label>
+            <div class="status-group">
+              <span class="field-label">Status</span>
+              <button
+                type="button"
+                class="status-btn active"
+                data-action-id="set-status-active"
+                onclick="this.classList.add('active'); var g=this.parentElement.querySelectorAll('.status-btn'); for(var i=0;i<g.length;i++){if(g[i]!==this)g[i].classList.remove('active');}"
+              >
+                Active
+              </button>
+              <button
+                type="button"
+                class="status-btn"
+                data-action-id="set-status-warn"
+                onclick="this.classList.add('active'); var g=this.parentElement.querySelectorAll('.status-btn'); for(var i=0;i<g.length;i++){if(g[i]!==this)g[i].classList.remove('active');}"
+              >
+                Warn
+              </button>
+              <button
+                type="button"
+                class="status-btn"
+                data-action-id="set-status-fail"
+                onclick="this.classList.add('active'); var g=this.parentElement.querySelectorAll('.status-btn'); for(var i=0;i<g.length;i++){if(g[i]!==this)g[i].classList.remove('active');}"
+              >
+                Fail
+              </button>
+            </div>
+            <div class="form-actions">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-action-id="ACT_CANCEL_EDIT"
+                onclick="window.actCancelEdit && window.actCancelEdit(event);"
+              >
+                Cancel Edit
+              </button>
+              <button
+                type="submit"
+                class="btn btn-primary"
+                data-action-id="ACT_SAVE_RECORD"
+              >
+                Record
+              </button>
+            </div>
+          </form>
+        </section>
+      </div>
+    </main>
+    <script src="assets/js/notepulse-mini.storage.js" defer></script>
+    <script src="assets/js/notepulse-mini.state.js" defer></script>
+    <script src="assets/js/app.js" defer></script>
+    <script src="assets/js/us-002/act_save_record.js" defer></script>
+    <script src="assets/js/us-002/act_cancel_edit.js" defer></script>
+  </body>
+</html>
