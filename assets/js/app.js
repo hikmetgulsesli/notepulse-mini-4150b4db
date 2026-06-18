@@ -380,7 +380,7 @@
     var recent = state.notes
       .slice()
       .sort(function (a, b) {
-        return new Date(b.updatedAt) - new Date(a.updatedAt);
+        return b.updatedAt.localeCompare(a.updatedAt);
       })
       .slice(0, 4);
 
@@ -452,11 +452,9 @@
             className: 'btn btn-primary',
             'data-action-id': 'resolve-insights',
             onClick: function () {
-              state.notes.forEach(function (note) {
-                if (note.status === 'warn' || note.status === 'fail') {
-                  store.setStatus(note.id, 'active');
-                }
-              });
+              if (typeof store.resolveAllNotes === 'function') {
+                store.resolveAllNotes();
+              }
             }
           },
           'Resolve'

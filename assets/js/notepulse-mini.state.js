@@ -114,7 +114,7 @@
     setView: function (view) {
       if (VIEWS.indexOf(view) === -1) return false;
       state.view = view;
-      if (view !== 'editor') state.draft = null;
+      // Preserve draft state when navigating to allow resuming edits later.
       store.persist();
       emit();
       return true;
@@ -180,6 +180,25 @@
       return store.updateNote(id, { status: status });
     },
 
+    resolveAllNotes: function () {
+      var changed = false;
+      for (var i = 0; i < state.notes.length; i++) {
+        var note = state.notes[i];
+        if (note.status === 'warn' || note.status === 'fail') {
+          note.status = 'active';
+          note.updatedAt = nowIso();
+          state.activity.push({ type: 'update', id: note.id, at: nowIso() });
+          changed = true;
+        }
+      }
+      if (changed) {
+        store.persist();
+        emit();
+        return true;
+      }
+      return false;
+    },
+
     startNewDraft: function () {
       state.draft = validateNote({
         id: uid(),
@@ -218,26 +237,34 @@
         emit();
         return null;
       }
-      var exists = false;
+      var idx = -1;
       for (var i = 0; i < state.notes.length; i++) {
         if (state.notes[i].id === state.draft.id) {
-          exists = true;
+          idx = i;
           break;
         }
       }
       var note;
-      if (exists) {
-        note = store.updateNote(state.draft.id, {
+      var now = nowIso();
+      if (idx !== -1) {
+        note = validateNote(Object.assign({}, state.notes[idx], {
           title: state.draft.title,
           content: state.draft.content,
-          status: state.draft.status
-        });
+          status: state.draft.status,
+          updatedAt: now
+        }));
+        state.notes[idx] = note;
+        state.activity.push({ type: 'update', id: note.id, at: now });
       } else {
-        note = store.createNote(state.draft.title, state.draft.content);
-        if (note && state.draft.status !== 'active') {
-          store.setStatus(note.id, state.draft.status);
-          note = store.getState().notes.find(function (n) { return n.id === note.id; });
-        }
+        note = validateNote({
+          id: state.draft.id || uid(),
+          title: state.draft.title,
+          content: state.draft.content,
+          status: state.draft.status,
+          updatedAt: now
+        });
+        state.notes.unshift(note);
+        state.activity.push({ type: 'create', id: note.id, at: now });
       }
       state.draft = null;
       state.view = 'operations';
@@ -284,7 +311,9 @@
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
-      URL.revokeObjectURL(url);
+      setTimeout(function () {
+        URL.revokeObjectURL(url);
+      }, 100);
       state.activity.push({ type: 'export', at: nowIso() });
       store.persist();
       emit();
