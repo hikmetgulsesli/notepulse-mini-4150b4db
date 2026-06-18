@@ -87,13 +87,22 @@
   }
 
   function init() {
-    refresh();
+    if (
+      global.NotePulseStore &&
+      global.NotePulseStore.getState() === null &&
+      typeof global.NotePulseStore.init === 'function'
+    ) {
+      global.NotePulseStore.init();
+      return;
+    }
+    var notes = getNotes();
+    updateMetrics(notes, 'all');
   }
 
   global.actFilterInsights = actFilterInsights;
 
   if (global.NotePulseStore && typeof global.NotePulseStore.subscribe === 'function') {
-    global.NotePulseStore.subscribe(init);
+    global.NotePulseStore.subscribe(refresh);
   }
 
   if (document.readyState === 'loading') {
