@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Four Operations - NotePulse Mini</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <main data-testid="setfarm-app-root" class="app-shell">
+      <header class="app-header">
+        <div class="brand">
+          <span class="brand-mark">◆</span>
+          <h1>NotePulse Mini</h1>
+        </div>
+        <nav class="app-nav" aria-label="Primary">
+          <a href="four-operations-notepulse-mini.html" class="nav-link active">Operations</a>
+          <a href="four-editor-notepulse-mini.html" class="nav-link">Editor</a>
+          <a href="index.html" class="nav-link" onclick="window.NotePulseStore && window.NotePulseStore.setView('insights'); return true;">Insights</a>
+        </nav>
+        <div class="header-actions">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-action-id="ACT_EXPORT_SUMMARY"
+            onclick="window.NotePulseStore && window.NotePulseStore.exportSummary();"
+          >
+            Export JSON Summary
+          </button>
+          <button
+            type="button"
+            class="btn btn-ghost"
+            data-action-id="ACT_RETRY_LOAD"
+            onclick="window.actRetryLoad && window.actRetryLoad(event);"
+          >
+            Retry Load
+          </button>
+        </div>
+      </header>
+      <div class="app-main">
+        <section class="view operations-view">
+          <div class="view-toolbar">
+            <input
+              type="text"
+              class="input search-input"
+              placeholder="Search records..."
+              data-action-id="ACT_SEARCH_RECORDS"
+              oninput="window.actSearchRecords && window.actSearchRecords(event);"
+            />
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-action-id="ACT_CREATE_RECORD"
+              onclick="window.actCreateRecord && window.actCreateRecord(event);"
+            >
+              Create Note
+            </button>
+          </div>
+          <ul class="record-list">
+            <li class="record-card status-active" data-record-id="np-1">
+              <div class="record-main">
+                <h3>Alpha Note</h3>
+                <p class="record-meta">6/18/2026, 10:00:00 AM</p>
+              </div>
+              <div class="record-actions">
+                <button
+                  type="button"
+                  class="status-btn active"
+                  data-action-id="set-status-active"
+                  onclick="window.NotePulseStore && window.NotePulseStore.setStatus('np-1', 'active');"
+                >
+                  Active
+                </button>
+                <button
+                  type="button"
+                  class="status-btn"
+                  data-action-id="set-status-warn"
+                  onclick="window.NotePulseStore && window.NotePulseStore.setStatus('np-1', 'warn');"
+                >
+                  Warn
+                </button>
+                <button
+                  type="button"
+                  class="status-btn"
+                  data-action-id="set-status-fail"
+                  onclick="window.NotePulseStore && window.NotePulseStore.setStatus('np-1', 'fail');"
+                >
+                  Fail
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-action-id="ACT_SELECT_RECORD"
+                  onclick="window.actSelectRecord && window.actSelectRecord(event);"
+                >
+                  Edit
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-danger"
+                  data-action-id="delete-record"
+                  onclick="if(confirm('Delete this record?')){window.NotePulseStore && window.NotePulseStore.deleteNote('np-1');}"
+                >
+                  Delete
+                </button>
+              </div>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </main>
+    <script src="assets/js/notepulse-mini.storage.js" defer></script>
+    <script src="assets/js/notepulse-mini.state.js" defer></script>
+    <script src="assets/js/app.js" defer></script>
+    <script src="assets/js/us-002/act_search_records.js" defer></script>
+    <script src="assets/js/us-002/act_create_record.js" defer></script>
+    <script src="assets/js/us-002/act_select_record.js" defer></script>
+    <script src="assets/js/us-002/act_retry_load.js" defer></script>
+  </body>
+</html>
