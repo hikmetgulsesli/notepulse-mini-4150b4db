@@ -37,7 +37,7 @@
             type="button"
             class="btn btn-ghost"
             data-action-id="ACT_RETRY_LOAD"
-            onclick="window.NotePulseStore && window.NotePulseStore.retryLoad();"
+            onclick="window.actRetryLoad && window.actRetryLoad(event);"
           >
             Retry Load
           </button>
@@ -97,7 +97,7 @@
                   type="button"
                   class="btn btn-secondary"
                   data-action-id="ACT_SELECT_RECORD"
-                  onclick="window.NotePulseStore && window.NotePulseStore.editNote('np-1');"
+                  onclick="window.actSelectRecord && window.actSelectRecord(event);"
                 >
                   Edit
                 </button>

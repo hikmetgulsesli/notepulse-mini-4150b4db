@@ -37,7 +37,7 @@
             type="button"
             class="btn btn-ghost"
             data-action-id="ACT_RETRY_LOAD"
-            onclick="window.NotePulseStore && window.NotePulseStore.retryLoad();"
+            onclick="window.actRetryLoad && window.actRetryLoad(event);"
           >
             Retry Load
           </button>
@@ -53,6 +53,7 @@
               Identifier
               <input
                 type="text"
+                name="identifier"
                 class="input"
                 placeholder="Enter a precise identifier..."
                 required
@@ -61,6 +62,7 @@
             <label class="field-label">
               Details
               <textarea
+                name="details"
                 class="input textarea"
                 rows="6"
                 placeholder="Document the procedural details here..."
@@ -119,5 +121,6 @@
     <script src="assets/js/app.js" defer></script>
     <script src="assets/js/us-002/act_save_record.js" defer></script>
     <script src="assets/js/us-002/act_cancel_edit.js" defer></script>
+    <script src="assets/js/us-002/act_retry_load.js" defer></script>
   </body>
 </html>
