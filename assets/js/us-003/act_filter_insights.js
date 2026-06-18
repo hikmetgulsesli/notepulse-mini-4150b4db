@@ -7,7 +7,10 @@
   function getNotes() {
     if (global.NotePulseStore && typeof global.NotePulseStore.getState === 'function') {
       var state = global.NotePulseStore.getState();
-      return (state && state.notes) || [];
+      var notes = (state && state.notes) || [];
+      return notes.filter(function (note) {
+        return note !== null && typeof note === 'object';
+      });
     }
     return [];
   }
@@ -78,5 +81,24 @@
     return filter;
   }
 
+  function refresh() {
+    var filter = FILTERS[currentFilterIndex];
+    updateMetrics(getNotes(), filter);
+  }
+
+  function init() {
+    refresh();
+  }
+
   global.actFilterInsights = actFilterInsights;
+
+  if (global.NotePulseStore && typeof global.NotePulseStore.subscribe === 'function') {
+    global.NotePulseStore.subscribe(init);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
 })(window);
