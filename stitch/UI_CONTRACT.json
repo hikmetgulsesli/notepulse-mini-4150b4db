@@ -1,0 +1,499 @@
+[
+  {
+    "screenId": "68cbcb61239d4268a333ef870c60dbf1",
+    "screenTitle": "Four Editor - NotePulse Mini",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "link",
+        "label": "Operations",
+        "href": "#",
+        "line": 112
+      },
+      {
+        "type": "link",
+        "label": "Editor",
+        "href": "#",
+        "line": 114
+      },
+      {
+        "type": "link",
+        "label": "Insights",
+        "href": "#",
+        "line": 116
+      },
+      {
+        "type": "link",
+        "label": "Export JSON Summary",
+        "href": "#",
+        "line": 202
+      },
+      {
+        "type": "link",
+        "label": "Retry Load",
+        "href": "#",
+        "line": 203
+      },
+      {
+        "type": "button",
+        "label": "sync",
+        "line": 120
+      },
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 123
+      },
+      {
+        "type": "button",
+        "label": "Active",
+        "line": 166
+      },
+      {
+        "type": "button",
+        "label": "Warn",
+        "line": 171
+      },
+      {
+        "type": "button",
+        "label": "Fail",
+        "line": 176
+      },
+      {
+        "type": "button",
+        "label": "Cancel Edit",
+        "line": 186
+      },
+      {
+        "type": "button",
+        "label": "Record",
+        "line": 189
+      },
+      {
+        "type": "input",
+        "label": "Enter a precise identifier...",
+        "inputType": "text",
+        "placeholder": "Enter a precise identifier...",
+        "line": 147
+      },
+      {
+        "type": "input",
+        "label": "Document the procedural details here...",
+        "inputType": "textarea",
+        "placeholder": "Document the procedural details here...",
+        "line": 159
+      },
+      {
+        "type": "form",
+        "label": "form",
+        "line": 141
+      }
+    ],
+    "navigation": [
+      {
+        "type": "link",
+        "label": "Operations",
+        "href": "#",
+        "line": 112
+      },
+      {
+        "type": "link",
+        "label": "Editor",
+        "href": "#",
+        "line": 114
+      },
+      {
+        "type": "link",
+        "label": "Insights",
+        "href": "#",
+        "line": 116
+      },
+      {
+        "type": "link",
+        "label": "Export JSON Summary",
+        "href": "#",
+        "line": 202
+      },
+      {
+        "type": "link",
+        "label": "Retry Load",
+        "href": "#",
+        "line": 203
+      }
+    ],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "sync",
+        "line": 120
+      },
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 123
+      },
+      {
+        "type": "button",
+        "label": "Active",
+        "line": 166
+      },
+      {
+        "type": "button",
+        "label": "Warn",
+        "line": 171
+      },
+      {
+        "type": "button",
+        "label": "Fail",
+        "line": 176
+      },
+      {
+        "type": "button",
+        "label": "Cancel Edit",
+        "line": 186
+      },
+      {
+        "type": "button",
+        "label": "Record",
+        "line": 189
+      }
+    ],
+    "inputs": [
+      {
+        "type": "input",
+        "label": "Enter a precise identifier...",
+        "inputType": "text",
+        "placeholder": "Enter a precise identifier...",
+        "line": 147
+      },
+      {
+        "type": "input",
+        "label": "Document the procedural details here...",
+        "inputType": "textarea",
+        "placeholder": "Document the procedural details here...",
+        "line": 159
+      }
+    ],
+    "hardcodedData": [],
+    "totalInteractive": 15,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  },
+  {
+    "screenId": "783e7f169c764bccb4a58abb7afe7e3e",
+    "screenTitle": "Insights - NotePulse Mini",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "link",
+        "label": "Operations",
+        "href": "#",
+        "line": 113
+      },
+      {
+        "type": "link",
+        "label": "Editor",
+        "href": "#",
+        "line": 114
+      },
+      {
+        "type": "link",
+        "label": "Insights",
+        "href": "#",
+        "line": 115
+      },
+      {
+        "type": "link",
+        "label": "Export JSON Summary",
+        "href": "#",
+        "line": 252
+      },
+      {
+        "type": "link",
+        "label": "Retry Load",
+        "href": "#",
+        "line": 253
+      },
+      {
+        "type": "button",
+        "label": "sync",
+        "line": 118
+      },
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 121
+      },
+      {
+        "type": "button",
+        "label": "Filter Insights",
+        "line": 138
+      },
+      {
+        "type": "button",
+        "label": "Resolve",
+        "line": 240
+      }
+    ],
+    "navigation": [
+      {
+        "type": "link",
+        "label": "Operations",
+        "href": "#",
+        "line": 113
+      },
+      {
+        "type": "link",
+        "label": "Editor",
+        "href": "#",
+        "line": 114
+      },
+      {
+        "type": "link",
+        "label": "Insights",
+        "href": "#",
+        "line": 115
+      },
+      {
+        "type": "link",
+        "label": "Export JSON Summary",
+        "href": "#",
+        "line": 252
+      },
+      {
+        "type": "link",
+        "label": "Retry Load",
+        "href": "#",
+        "line": 253
+      }
+    ],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "sync",
+        "line": 118
+      },
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 121
+      },
+      {
+        "type": "button",
+        "label": "Filter Insights",
+        "line": 138
+      },
+      {
+        "type": "button",
+        "label": "Resolve",
+        "line": 240
+      }
+    ],
+    "inputs": [],
+    "hardcodedData": [],
+    "totalInteractive": 9,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  },
+  {
+    "screenId": "a1dc4a6df0694b0680e18729a9c494be",
+    "screenTitle": "Four Operations - NotePulse Mini",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "link",
+        "label": "Operations",
+        "href": "#",
+        "line": 110
+      },
+      {
+        "type": "link",
+        "label": "Editor",
+        "href": "#",
+        "line": 111
+      },
+      {
+        "type": "link",
+        "label": "Insights",
+        "href": "#",
+        "line": 112
+      },
+      {
+        "type": "link",
+        "label": "Export JSON Summary",
+        "href": "#",
+        "line": 306
+      },
+      {
+        "type": "link",
+        "label": "Retry Load",
+        "href": "#",
+        "line": 307
+      },
+      {
+        "type": "button",
+        "label": "sync",
+        "line": 116
+      },
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 119
+      },
+      {
+        "type": "button",
+        "label": "Retry Load",
+        "line": 149
+      },
+      {
+        "type": "button",
+        "label": "Create Note",
+        "line": 153
+      },
+      {
+        "type": "button",
+        "label": "edit",
+        "line": 175
+      },
+      {
+        "type": "button",
+        "label": "edit",
+        "line": 192
+      },
+      {
+        "type": "button",
+        "label": "edit",
+        "line": 209
+      },
+      {
+        "type": "button",
+        "label": "edit",
+        "line": 226
+      },
+      {
+        "type": "button",
+        "label": "Export",
+        "line": 245
+      },
+      {
+        "type": "button",
+        "label": "Delete",
+        "line": 248
+      },
+      {
+        "type": "button",
+        "label": "Edit Record",
+        "line": 251
+      },
+      {
+        "type": "input",
+        "label": "Search records...",
+        "inputType": "text",
+        "placeholder": "Search records...",
+        "line": 147
+      }
+    ],
+    "navigation": [
+      {
+        "type": "link",
+        "label": "Operations",
+        "href": "#",
+        "line": 110
+      },
+      {
+        "type": "link",
+        "label": "Editor",
+        "href": "#",
+        "line": 111
+      },
+      {
+        "type": "link",
+        "label": "Insights",
+        "href": "#",
+        "line": 112
+      },
+      {
+        "type": "link",
+        "label": "Export JSON Summary",
+        "href": "#",
+        "line": 306
+      },
+      {
+        "type": "link",
+        "label": "Retry Load",
+        "href": "#",
+        "line": 307
+      }
+    ],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "sync",
+        "line": 116
+      },
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 119
+      },
+      {
+        "type": "button",
+        "label": "Retry Load",
+        "line": 149
+      },
+      {
+        "type": "button",
+        "label": "Create Note",
+        "line": 153
+      },
+      {
+        "type": "button",
+        "label": "edit",
+        "line": 175
+      },
+      {
+        "type": "button",
+        "label": "edit",
+        "line": 192
+      },
+      {
+        "type": "button",
+        "label": "edit",
+        "line": 209
+      },
+      {
+        "type": "button",
+        "label": "edit",
+        "line": 226
+      },
+      {
+        "type": "button",
+        "label": "Export",
+        "line": 245
+      },
+      {
+        "type": "button",
+        "label": "Delete",
+        "line": 248
+      },
+      {
+        "type": "button",
+        "label": "Edit Record",
+        "line": 251
+      }
+    ],
+    "inputs": [
+      {
+        "type": "input",
+        "label": "Search records...",
+        "inputType": "text",
+        "placeholder": "Search records...",
+        "line": 147
+      }
+    ],
+    "hardcodedData": [],
+    "totalInteractive": 17,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  }
+]
