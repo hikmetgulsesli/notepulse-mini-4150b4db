@@ -114,7 +114,7 @@
     setView: function (view) {
       if (VIEWS.indexOf(view) === -1) return false;
       state.view = view;
-      // Preserve draft state when navigating to allow resuming edits later.
+      // Preserve draft state when navigating to allow resuming edits later
       store.persist();
       emit();
       return true;
@@ -237,34 +237,35 @@
         emit();
         return null;
       }
+      var exists = false;
       var idx = -1;
       for (var i = 0; i < state.notes.length; i++) {
         if (state.notes[i].id === state.draft.id) {
+          exists = true;
           idx = i;
           break;
         }
       }
       var note;
-      var now = nowIso();
-      if (idx !== -1) {
+      if (exists) {
         note = validateNote(Object.assign({}, state.notes[idx], {
           title: state.draft.title,
           content: state.draft.content,
           status: state.draft.status,
-          updatedAt: now
+          updatedAt: nowIso()
         }));
         state.notes[idx] = note;
-        state.activity.push({ type: 'update', id: note.id, at: now });
+        state.activity.push({ type: 'update', id: note.id, at: nowIso() });
       } else {
         note = validateNote({
           id: state.draft.id || uid(),
           title: state.draft.title,
           content: state.draft.content,
           status: state.draft.status,
-          updatedAt: now
+          updatedAt: nowIso()
         });
         state.notes.unshift(note);
-        state.activity.push({ type: 'create', id: note.id, at: now });
+        state.activity.push({ type: 'create', id: note.id, at: nowIso() });
       }
       state.draft = null;
       state.view = 'operations';
