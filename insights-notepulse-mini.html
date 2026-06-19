@@ -105,10 +105,12 @@
           var state = store.getState();
           if (!state) return;
 
+          var notes = Array.isArray(state.notes) ? state.notes : [];
+
           var counts = {};
           store.STATUS.forEach(function (status) {
-            counts[status] = state.notes.filter(function (n) {
-              return n.status === status;
+            counts[status] = notes.filter(function (n) {
+              return n && n.status === status;
             }).length;
           });
 
@@ -117,17 +119,19 @@
           var warnEl = document.querySelector('[data-metric="warn"]');
           var failEl = document.querySelector('[data-metric="fail"]');
 
-          if (totalEl) totalEl.textContent = String(state.notes.length);
+          if (totalEl) totalEl.textContent = String(notes.length);
           if (activeEl) activeEl.textContent = String(counts.active);
           if (warnEl) warnEl.textContent = String(counts.warn);
           if (failEl) failEl.textContent = String(counts.fail);
 
           var recentList = document.querySelector('[data-recent-list]');
           if (recentList) {
-            var recent = state.notes
+            var recent = notes
               .slice()
               .sort(function (a, b) {
-                return b.updatedAt.localeCompare(a.updatedAt);
+                var dateA = a && typeof a.updatedAt === 'string' ? a.updatedAt : '';
+                var dateB = b && typeof b.updatedAt === 'string' ? b.updatedAt : '';
+                return dateB.localeCompare(dateA);
               })
               .slice(0, 4);
 
@@ -137,7 +141,7 @@
             } else {
               recent.forEach(function (note) {
                 var li = document.createElement('li');
-                li.textContent = (note.title || '(untitled)') + ' — ' + note.status;
+                li.textContent = (note && note.title || '(untitled)') + ' — ' + (note && note.status || '');
                 recentList.appendChild(li);
               });
             }

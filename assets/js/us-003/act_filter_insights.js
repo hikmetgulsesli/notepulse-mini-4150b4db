@@ -3,7 +3,7 @@
 
   function actFilterInsights(event) {
     if (event) event.preventDefault();
-    if (!global.NotePulseStore) return false;
+    if (!global.NotePulseStore || typeof global.NotePulseStore.setView !== 'function') return false;
     global.NotePulseStore.setView('operations');
     return true;
   }

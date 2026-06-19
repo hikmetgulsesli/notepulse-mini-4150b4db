@@ -3,7 +3,7 @@
 
   function actExportSummary(event) {
     if (event) event.preventDefault();
-    if (!global.NotePulseStore) return false;
+    if (!global.NotePulseStore || typeof global.NotePulseStore.exportSummary !== 'function') return false;
     global.NotePulseStore.exportSummary();
     return true;
   }
